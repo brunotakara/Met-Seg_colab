@@ -1,4 +1,13 @@
-# Met Seg
+# Met Seg_colab
+
+This repo is based on Jon Ottesen's Met-Seg and have some alterations for use in Google Colab. It contains the original Met-Seg repo with a few changes for use in Colab's Jupyter Notebooks, the changes in this repository are the following:
+
+* `m_seg` folder was renamed to `t_seg` because some parts of the code mention `t_seg` and it does not exist
+* in `met-seg` main script, lines 16 and 17 had their imports renamed from m_seg to match t_seg folder name.
+* Also in line 237, it was added a conditional `if count != 4` to avoid input level dropout from falling into 0 division when all four sequences are present
+* in t_seg/dataset/container/__ init.py__ line 5 was commented because it could not find MetContainer `#from .metcontainer import MetContainer`
+
+The Jupyter notebook can be found at: 
 
 The GitHub repo for *2.5D and 3D Segmentation of Brain Metastases with Deep Learning on Multinational MRI Data*. This repository provides the source code for the models (HRNetV2), model weight, training schematic, evaluation metrics, and a simple inference script.
 
