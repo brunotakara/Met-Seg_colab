@@ -235,7 +235,7 @@ lllollllcccccc,..,,;coxO0KKKKKXXXXXXXXXXNNWWNXK0Okkxl,.........',,,,;;:;;,'....
 
             inp = norm(inp)
             # Important to scale inp correctly if one of the sequences are missing -> input level dropout
-            if p !=4:
+            if counter != 4:
                 p = counter/4
                 factor = p/(1 - p)
                 inp = inp*factor
