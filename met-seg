@@ -13,8 +13,8 @@ import torch.nn as nn
 
 from t_seg.dataset.containers import DatasetContainer
 
-from m_seg.models.HRNet3D.hrnet import HighResolutionNet
-from m_seg.models.HRNet3D.config import hrnet_w48
+from t_seg.models.HRNet3D.hrnet import HighResolutionNet
+from t_seg.models.HRNet3D.config import hrnet_w48
 
 
 from skimage import measure
@@ -235,9 +235,10 @@ lllollllcccccc,..,,;coxO0KKKKKXXXXXXXXXXNNWWNXK0Okkxl,.........',,,,;;:;;,'....
 
             inp = norm(inp)
             # Important to scale inp correctly if one of the sequences are missing -> input level dropout
-            p = counter/4
-            factor = p/(1 - p)
-            inp = inp*factor
+            if p !=4:
+                p = counter/4
+                factor = p/(1 - p)
+                inp = inp*factor
             
             out = inferer(inp.unsqueeze(0), model)[0]
 
