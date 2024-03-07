@@ -29,4 +29,4 @@ inputs.sort()
 for scan, input_file in enumerate(inputs):
 
     # this is your bash command over all scans
-    os.system(f'python Met-Seg/met-seg --i {input_file} --o gdrive/MyDrive/Path\ where\ you\ want\ to\ store\ your\ preds/Scan_{scan+1:03} --c gdrive/MyDrive/\path\ where\ you\ saved\ your\ weights/3d_model.pth -device 0')
+    os.system(f'python Met-Seg_colab/met-seg --i {input_file} --o gdrive/MyDrive/Path\ where\ you\ want\ to\ store\ your\ preds/Scan_{scan+1:03} --c gdrive/MyDrive/\path\ where\ you\ saved\ your\ weights/3d_model.pth -device 0')
